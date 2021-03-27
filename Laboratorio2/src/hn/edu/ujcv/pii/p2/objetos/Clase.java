@@ -12,6 +12,8 @@ public abstract class Clase implements IClase{
     private int    NR;
     private String Nombre;
     private int    UnidadesValorativas;
+    private static final double VALORPARCIAL1Y2 = 0.3;
+    private static final double VALORPARCIAL3 = 0.4;
 
     public Clase(){
     }
@@ -125,17 +127,4 @@ public abstract class Clase implements IClase{
                 "\n-Esta clase tiene "+getUnidadesValorativas()+" unidades valorativas"+
                 "\n ---------------------------------------------------------------------";
     }
-
-    @Override
-    public double CalcularNotaFinal(){
-        double nota1 = (NE1 + NA1)*0.3;
-        double nota2 = (NE2 + NA2)*0.3;
-        double nota3 = (NE3 + NA3)*0.4;
-        double notaFinal = nota1+nota2+nota3;
-
-
-
-        return notaFinal;
-    }
-
 }

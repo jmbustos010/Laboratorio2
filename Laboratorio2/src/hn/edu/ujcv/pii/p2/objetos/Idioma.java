@@ -2,6 +2,8 @@ package hn.edu.ujcv.pii.p2.objetos;
 
 public class Idioma extends General{
     private int NotaLaboratorio;
+    private static final double ValorParcial1Y2 = 0.3;
+    private static final double ValorParcial3 = 0.4;
 
     public Idioma(){
         super();
@@ -20,9 +22,9 @@ public class Idioma extends General{
 
     @Override
     public double CalcularNotaFinal(){
-        double nota1 = (super.getNE1() + super.getNA1())*0.3;
-        double nota2 = (super.getNE2() + super.getNA2())*0.3;
-        double nota3 = (super.getNE3() + super.getNA3() + getNotaLaboratorio())*0.4;
+        double nota1 = (super.getNE1() + super.getNA1())*ValorParcial1Y2;
+        double nota2 = (super.getNE2() + super.getNA2())*ValorParcial1Y2;
+        double nota3 = (super.getNE3() + super.getNA3() + getNotaLaboratorio())*ValorParcial3;
 
         double notaFinal = nota1+nota2+nota3;
         return notaFinal;
